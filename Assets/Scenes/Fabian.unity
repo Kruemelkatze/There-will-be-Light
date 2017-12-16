@@ -8205,6 +8205,7 @@ GameObject:
   - component: {fileID: 2099447552}
   - component: {fileID: 2099447551}
   - component: {fileID: 2099447554}
+  - component: {fileID: 2099447557}
   - component: {fileID: 2099447555}
   - component: {fileID: 2099447556}
   m_Layer: 0
@@ -8323,7 +8324,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099447550}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 197e3b8afb1c94eaa8340d1c4ca99f0f, type: 3}
   m_Name: 
@@ -8332,18 +8333,40 @@ MonoBehaviour:
   moveRight: 275
   moveDown: 274
   moveUp: 273
+  MaxSpeed: 8
+  SpeedRampupTime: 0.2
+  vSpeed: 2
+  vSpeedDefault: 2
+  vSpeedMax: 8
 --- !u!114 &2099447556
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099447550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c617545908febc04d9a8303aef909e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
+--- !u!114 &2099447557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2099447550}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5d9971329129744a01850593abf2d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveLeft: 276
+  moveRight: 275
+  moveDown: 274
+  moveUp: 273
+  hSpeedMax: 6
+  vSpeed: 2
 --- !u!1 &2136648481
 GameObject:
   m_ObjectHideFlags: 0
