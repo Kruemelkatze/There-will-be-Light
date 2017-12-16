@@ -25,11 +25,6 @@ public class UIManager : MonoBehaviour
         SeedTextField.Select();
     }
 
-    void Update()
-    {
-
-    }
-
     public void OnSeedEditEnd()
     {
         var text = SeedTextField.text;
@@ -37,18 +32,24 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("No seed entered");
             int i = Random.Range(0, DefaultSeeds.Count);
-            text = DefaultSeeds[i];
+            text = DefaultSeeds[i].ToLower();
             SeedTextField.text = text;
-
             StartCoroutine(CallStart(text));
         }
         else
         {
             HUD.SetActive(true);
             SeedScreen.SetActive(false);
-            Hub.Get<GameManager>().StartGame(text);
+            Hub.Get<GameManager>().StartGame(text.ToLower());
         }
 
+        InitHUD(text);
+    }
+
+    public void InitHUD(string seed)
+    {
+        hudSeed.text = seed;
+        hudHighscore.text = Hub.Get<Highscore>().GetHighscore(seed).ToString();
     }
 
     IEnumerator CallStart(string text)
