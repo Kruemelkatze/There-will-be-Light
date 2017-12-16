@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public PlayerColor CurrentColor = PlayerColor.Yellow;
     private GameObject _player;
 
+    public Vector2 CheckpointSpawnOffset = new Vector2(0, 0);
+
     public static int Seed
     {
         get
@@ -29,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {        
+    {
         Hub.Get<PlayerMovement2>().Enabled = false;
         _player = GameObject.FindGameObjectWithTag("Player");
         _player.SetActive(false);
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     void generateCheckpoint()
     {
-        Instantiate(checkpoint, new Vector3(0.25f, 4, 0), Quaternion.identity);
+        Instantiate(checkpoint, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     public void switchColor()
@@ -54,10 +56,16 @@ public class GameManager : MonoBehaviour
         Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
     }
 
+    public void SetCheckpoint(Vector3 collisionPos)
+    {
+        Vector3 vec3Checkpoint = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
+        vec3Checkpoint = new Vector3(vec3Checkpoint.x, collisionPos.y, vec3Checkpoint.z);
+        GameObject.FindGameObjectWithTag("checkpoint").transform.position = vec3Checkpoint + new Vector3(CheckpointSpawnOffset.x, CheckpointSpawnOffset.y);
+    }
+
     public void StartGame(string seed)
     {
-        //var tfObj = GameObject.FindGameObjectWithTag("seedinput");
-        StringSeed = seed;
+        StringSeed = seed?.ToLowerInvariant() ?? "42";
         Debug.Log($"Starting game with seed '{StringSeed}' = {Seed}");
         Random.InitState(Seed);
 

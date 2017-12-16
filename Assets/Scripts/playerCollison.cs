@@ -23,6 +23,9 @@ public class playerCollison : MonoBehaviour
 
     public LayerMask ObstacleLayerMask;
 
+    public float ImmunityTime = 1.5f;
+    public bool CollisionDisabled = false;
+
     public float WaitBeforePixel = 0.7f;
     public float WaitBetweenPixelateAndTP = 0.7f;
 
@@ -60,26 +63,19 @@ public class playerCollison : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (CollisionDisabled)
+            return;
+
         if (Contains(ObstacleLayerMask, other.gameObject.layer))
         {
             Debug.Log("BOOM");
             CreateSplash();
-            if (Hub.Get<GameManager>().CurrentColor == GameManager.PlayerColor.Blue)
-            {
-                Vector3 vec3Checkpoint = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
-                GameObject.FindGameObjectWithTag("checkpoint").transform.position = new Vector3(vec3Checkpoint.x, other.transform.position.y, other.transform.position.z);
-            }
             ThereWillBeLight();
 
             DeactivateSun();
             StartCoroutine(waitNewTurn());
             //this.transform.position = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
         }
-    }
-   
-    private void setNewCheckpoint()
-    {
-
     }
 
     private void DeactivateSun()
@@ -108,7 +104,7 @@ public class playerCollison : MonoBehaviour
         if (explosion != null)
         {
             var position = new Vector3(transform.position.x, transform.position.y, -2);
-            var created = Instantiate(explosion, position , Quaternion.identity);            
+            var created = Instantiate(explosion, position, Quaternion.identity);
         }
     }
 
@@ -122,12 +118,14 @@ public class playerCollison : MonoBehaviour
                 break;
             case GameManager.PlayerColor.Blue:
                 light = BlueLight;
+                Hub.Get<GameManager>().SetCheckpoint(transform.position);
                 break;
             case GameManager.PlayerColor.Yellow:
                 light = YellowLight;
                 break;
         }
-        Instantiate(light, this.transform.position, Quaternion.identity);
+        var targetPos = new Vector3(transform.position.x, transform.position.y, -1);
+        Instantiate(light, targetPos, Quaternion.identity);
     }
 
     public static bool Contains(LayerMask mask, int layer)
@@ -146,9 +144,21 @@ public class playerCollison : MonoBehaviour
         };
         TransitionKit.instance.transitionWithDelegate(pixelater);
 
+        Hub.Get<GameManager>().switchColor();
         yield return new WaitForSeconds(WaitBetweenPixelateAndTP);
-        this.transform.position = GameObject.FindGameObjectWithTag("checkpoint").transform.position;        
+        var targetPos = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
+        this.transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
+
+        StartCoroutine(DisableCollision());
+
         sunAnimation.SetActive(true);
         Hub.Get<PlayerMovement2>().Enabled = true;
+    }
+
+    IEnumerator DisableCollision()
+    {
+        CollisionDisabled = true;
+        yield return new WaitForSeconds(ImmunityTime);
+        CollisionDisabled = false;
     }
 }
