@@ -7,11 +7,11 @@ public class LevelGeneration : MonoBehaviour {
 	public string seed;
 	public Transform[] superSegments;
 
-	private float x = 14.44576f;
+	private float x = 0;
 	private float y = 0;
-	private float z = -0.8025516f;
+	private float z = 0;
 
-	private float superSegmentHeight = 47f;
+	public float superSegmentHeight = 47f;
 
 	// Use this for initialization
 	void Start () {
