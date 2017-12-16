@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToFollow: {fileID: 0}
   yOffset: -7
+  SpeedVariety: 3.5
 --- !u!114 &114900671541804716
 MonoBehaviour:
   m_ObjectHideFlags: 1
