@@ -15,11 +15,10 @@ public class LevelGeneration : MonoBehaviour {
 
 	public float segmentHeight = 12f;
 
+    public List<GameObject> DisableOnGenerated;
+
 	// Use this for initialization
-	void Start () {
-
-        Random.seed = GameManager.Seed;
-
+	public void GenerateLevel () {
 		Instantiate(startSegment, new Vector3(x, y, z), Quaternion.identity);
 
 		for (int i = 0; i < LevelLength; i++) {
@@ -33,14 +32,14 @@ public class LevelGeneration : MonoBehaviour {
 			} else {
 				Instantiate(superSegments[segmentID], new Vector3(x, y, z), Quaternion.identity);
 			}
-
-
-
-
-
 		}
 
 		Instantiate(endSegment, new Vector3(x, y - segmentHeight, z), Quaternion.identity);
+
+        foreach(var obj in DisableOnGenerated)
+        {
+            obj.SetActive(false);
+        }
 
 	}
 	

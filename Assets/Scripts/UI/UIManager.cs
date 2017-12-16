@@ -17,8 +17,10 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         if (SeedTextField != null)
+        {
             _input = SeedTextField.GetComponent<InputField>();
-
+            _input.Select();
+        }
 
     }
 

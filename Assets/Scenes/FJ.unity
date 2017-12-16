@@ -457,11 +457,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.size
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4708964627320036, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.700894
@@ -499,61 +494,6 @@ Prefab:
       propertyPath: SeedTextField
       value: 
       objectReference: {fileID: 205736235}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[0]
-      value: Sirius
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[1]
-      value: Wega
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[2]
-      value: Betelgeuze
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[3]
-      value: Aldebaran
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[4]
-      value: Deneb
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[5]
-      value: Altair
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[6]
-      value: Antares
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[7]
-      value: Mizar
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[8]
-      value: Rigel
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: DefaultSeeds.Array.data[9]
-      value: Barnard
-      objectReference: {fileID: 0}
-    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
-        type: 2}
-      propertyPath: WaitAfterEmptySeed
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
   m_IsPrefabParent: 0

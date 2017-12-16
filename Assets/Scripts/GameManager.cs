@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject checkpoint;
-    public static string StringSeed = "alsdkjhjakshdkjhas";
+    public static string StringSeed = "";
     public PlayerColor CurrentColor = PlayerColor.Yellow;
+    private GameObject _player;
 
     public static int Seed
     {
@@ -24,20 +25,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool GameStarted = false;
+
     // Use this for initialization
     void Start()
     {        
         Hub.Get<PlayerMovement2>().Enabled = false;
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _player.SetActive(false);
+        Debug.Log(_player);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
-
-    void generateLevel()
+    void SetupLevel()
     {
+        Hub.Get<LevelGeneration>().GenerateLevel();
         generateCheckpoint();
     }
 
@@ -58,8 +60,10 @@ public class GameManager : MonoBehaviour
         StringSeed = seed;
         Debug.Log($"Starting game with seed '{StringSeed}' = {Seed}");
         Random.InitState(Seed);
-        
-        generateLevel();
+
+        SetupLevel();
+        GameStarted = true;
+        _player.SetActive(true);
         Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
         Hub.Get<PlayerMovement2>().Enabled = true;
     }
