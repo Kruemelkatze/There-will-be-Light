@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject checkpoint;
-    public static string StringSeed = "";
+    public static string StringSeed = "alsdkjhjakshdkjhas";
     public PlayerColor CurrentColor = PlayerColor.Yellow;
 
     public static int Seed
