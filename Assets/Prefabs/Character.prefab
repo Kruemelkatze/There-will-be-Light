@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 4039646027545504}
   - component: {fileID: 108879295957946062}
   - component: {fileID: 61013301244082898}
+  - component: {fileID: 114931679909310826}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -348,7 +349,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Text
+  m_Text: 
 --- !u!114 &114144759844291994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +372,7 @@ MonoBehaviour:
   vUpSpeedMax: 6
   vDownRampupTime: 1
   vUpRampupTime: 0.5
+  Enabled: 1
 --- !u!114 &114230927763316122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,7 +400,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1319327375679872}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f698d69b610f01418898c2b2ea76ae9, type: 3}
   m_Name: 
@@ -444,15 +446,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302333d6817d8e342a8f10d5259cda4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1566570331867034, guid: fe7034a6c4db7df49a511991deac5117, type: 2}
-  implosion: {fileID: 0}
+  RedWave: {fileID: 1566570331867034, guid: fe7034a6c4db7df49a511991deac5117, type: 2}
+  YellowWave: {fileID: 1169848305416028, guid: 64f3c718f3478d44e8f57411da3b4a40, type: 2}
+  BlueWave: {fileID: 1240424922736832, guid: ceb6e75126df9f54f9152a6cf213d918, type: 2}
+  implosion: {fileID: 144344, guid: d157fcfc73457ea44b9a125e5be375ca, type: 2}
   sunAnimation: {fileID: 1804552277999932}
   RedLight: {fileID: 1409943424896578, guid: 46f11f70399fe854c8e8c6b2241895ff, type: 2}
-  BlueLight: {fileID: 0}
-  YellowLight: {fileID: 0}
+  BlueLight: {fileID: 1965781859918098, guid: 008eb516a8f396648af5755609c13c72, type: 2}
+  YellowLight: {fileID: 1502636060182554, guid: 3a132e71a1f904d40b4b73c6297d2ff1,
+    type: 2}
   ObstacleLayerMask:
     serializedVersion: 2
     m_Bits: 4096
+  WaitBeforePixel: 0.7
+  WaitBetweenPixelateAndTP: 0.7
+--- !u!114 &114931679909310826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791426119294010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea40177c7f5e4eef9fd431f56b95eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198686316648912966
 ParticleSystem:
   m_ObjectHideFlags: 1
