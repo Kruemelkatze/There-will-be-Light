@@ -217,6 +217,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea20ffd8874bd9741b4cd8cc45bfa591, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &379714346 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114481491651286376, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
+    type: 2}
+  m_PrefabInternal: {fileID: 96788836}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &454332565 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1866721366694466, guid: 24c9758f20d26614fb497fe01d95c7b3,
@@ -427,6 +433,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45a570ffd5e7bdc479b5ed462d6cd0ab, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1226326828 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114048813523035922, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
+    type: 2}
+  m_PrefabInternal: {fileID: 96788836}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1318565567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1318565568}
+  - component: {fileID: 1318565569}
+  m_Layer: 0
+  m_Name: HighScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1318565568
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1318565567}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2013824677}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318565569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1318565567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3461866e4d0744a99946636b36e011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1425354563
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +589,7 @@ Prefab:
         type: 2}
       propertyPath: SeedTextField
       value: 
-      objectReference: {fileID: 1926609380}
+      objectReference: {fileID: 1926609381}
     - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
         type: 2}
       propertyPath: HUD
@@ -558,6 +610,16 @@ Prefab:
       propertyPath: CheckpointSpawnOffset.y
       value: -2
       objectReference: {fileID: 0}
+    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: hudSeed
+      value: 
+      objectReference: {fileID: 379714346}
+    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: hudHighscore
+      value: 
+      objectReference: {fileID: 1226326828}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
   m_IsPrefabParent: 0
@@ -613,11 +675,17 @@ GameObject:
   m_PrefabParentObject: {fileID: 1128243170244268, guid: 45a570ffd5e7bdc479b5ed462d6cd0ab,
     type: 2}
   m_PrefabInternal: {fileID: 1171998886}
---- !u!1 &1926609380 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1152221155965894, guid: 24c9758f20d26614fb497fe01d95c7b3,
+--- !u!114 &1926609381 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114085125914074366, guid: 24c9758f20d26614fb497fe01d95c7b3,
     type: 2}
   m_PrefabInternal: {fileID: 513047344}
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!4 &2013824677 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4708964627320036, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+    type: 2}
+  m_PrefabInternal: {fileID: 1505867285}
 --- !u!1 &2020718292 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1319327375679872, guid: 8517bd292de0eec44b8d5bb68b9dbd1f,

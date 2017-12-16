@@ -30,6 +30,7 @@ public class Hub : MonoBehaviour
         Register<GameManager>();
         Register<LevelGeneration>();
         Register<PlayerMovement2>();
+        Register<Highscore>();
     }
 
     public static T Get<T>()

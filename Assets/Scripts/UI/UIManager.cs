@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-    public GameObject SeedTextField;
-    private InputField _input;
+    public InputField SeedTextField;
 
     public GameObject HUD;
     public GameObject SeedScreen;
@@ -23,23 +22,23 @@ public class UIManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (SeedTextField != null)
-        {
-            _input = SeedTextField.GetComponent<InputField>();
-            _input.Select();
-        }
+        SeedTextField.Select();
+    }
+
+    void Update()
+    {
 
     }
 
     public void OnSeedEditEnd()
     {
-        var text = _input.text;
+        var text = SeedTextField.text;
         if (string.IsNullOrWhiteSpace(text))
         {
             Debug.Log("No seed entered");
             int i = Random.Range(0, DefaultSeeds.Count);
             text = DefaultSeeds[i];
-            _input.text = text;
+            SeedTextField.text = text;
 
             StartCoroutine(CallStart(text));
         }
