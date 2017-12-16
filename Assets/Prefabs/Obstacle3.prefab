@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4671792217718876}
   - component: {fileID: 60499612477484424}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Obstacle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4535850068380642}
   - component: {fileID: 33642812535130504}
   - component: {fileID: 23018024752501262}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4682762183097048}
   - component: {fileID: 33401152702966366}
   - component: {fileID: 23708650299614184}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4183051570269060}
   - component: {fileID: 33050804511406478}
   - component: {fileID: 23904874352445500}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
