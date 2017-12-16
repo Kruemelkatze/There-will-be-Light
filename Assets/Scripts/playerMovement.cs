@@ -5,10 +5,10 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
 
 	private Rigidbody2D rigidbody2D;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
-	public KeyCode moveLeft;
-	public KeyCode moveRight;
-	public KeyCode moveDown;
-	public KeyCode moveUp;
+    public KeyCode moveLeft = KeyCode.LeftArrow;
+	public KeyCode moveRight = KeyCode.RightArrow;
+	public KeyCode moveDown = KeyCode.DownArrow;
+	public KeyCode moveUp = KeyCode.UpArrow;
 
 	private float targetTime = 2.0f;  // max keypress time
 	private float currentTime = 0.0f; // already pressed time
