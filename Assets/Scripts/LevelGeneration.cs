@@ -14,9 +14,6 @@ public class LevelGeneration : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-        Random.seed = GameManager.Seed;
-
  		for (int i = 0; i < 10; i++) {
 			int segmentID = (int)Mathf.Floor(Random.value * (superSegments.Length));
 

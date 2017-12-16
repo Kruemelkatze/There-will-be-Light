@@ -26,9 +26,8 @@ public class GameManager : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
-        generateLevel();
-        Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
+    {        
+        Hub.Get<PlayerMovement2>().Enabled = false;
     }
 
     // Update is called once per frame
@@ -51,5 +50,17 @@ public class GameManager : MonoBehaviour
     {
         CurrentColor = (PlayerColor)Random.Range(0, 3);
         Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
+    }
+
+    public void StartGame(string seed)
+    {
+        //var tfObj = GameObject.FindGameObjectWithTag("seedinput");
+        StringSeed = seed;
+        Debug.Log($"Starting game with seed '{StringSeed}' = {Seed}");
+        Random.InitState(Seed);
+        
+        generateLevel();
+        Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
+        Hub.Get<PlayerMovement2>().Enabled = true;
     }
 }

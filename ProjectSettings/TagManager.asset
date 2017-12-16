@@ -6,6 +6,7 @@ TagManager:
   tags:
   - red
   - checkpoint
+  - seedinput
   layers:
   - Default
   - TransparentFX

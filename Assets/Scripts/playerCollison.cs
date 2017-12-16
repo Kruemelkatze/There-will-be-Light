@@ -29,7 +29,6 @@ public class playerCollison : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("Start");
         Hub.Get<EventHub>().PlayerColorChanged += ColorChanged;
     }
 
