@@ -21,20 +21,20 @@ public class PlayerColor : MonoBehaviour {
 
 		switch((RndColor)Random.Range(0, 3)) {
 			case RndColor.Red:
-				renderer.color = new Color(1f, 0f, 0f, 1f);
-				playerLight.color = new Color(1f, 0f, 0f, 1f);
+				renderer.color = new Color(0.937f, 0.231f, 0.212f, 1f);
+				playerLight.color = new Color(0.937f, 0.231f, 0.212f, 1f);
 				print("set player to color red");
 				break;
 
 			case RndColor.Green:
-				renderer.color = new Color(0f, 1f, 0f, 1f);
-				playerLight.color = new Color(0f, 1f, 0f, 1f);
+				renderer.color = new Color(0.059f, 0.608f, 0.059f, 1f);
+				playerLight.color = new Color(0.059f, 0.608f, 0.059f, 1f);
 				print("set player to color green");
 				break;
 
 			case RndColor.Blue:
-				renderer.color = new Color(0.3f, 0.3f, 1f, 1f);
-				playerLight.color = new Color(0.3f, 0.3f, 1f, 1f);
+				renderer.color = new Color(0f, 0.51f, 0.784f, 1f);
+				playerLight.color = new Color(0f, 0.51f, 0.784f, 1f);
 				break;
 
 		}
