@@ -8,6 +8,8 @@ public class playerCollison : MonoBehaviour
     public GameObject explosion;
     public GameObject implosion;
 
+    public LayerMask ObstacleLayerMask;
+
     // Use this for initialization
     void Start()
     {
@@ -23,11 +25,19 @@ public class playerCollison : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Enter " + other.tag);
-        if (other.gameObject.tag.Equals("red"))
+        if (Contains(ObstacleLayerMask, other.gameObject.layer))
         {
-            Instantiate(explosion, this.transform.position, Quaternion.identity);
+            Debug.Log("BOOM");
+            if (explosion != null)
+            {
+                Instantiate(explosion, this.transform.position, Quaternion.identity);
+            }
             this.transform.position = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
         }
+    }
+
+    public static bool Contains(LayerMask mask, int layer)
+    {
+        return mask == (mask | (1 << layer));
     }
 }

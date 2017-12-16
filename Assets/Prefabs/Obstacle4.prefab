@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4256861072665256}
   - component: {fileID: 33244047105103158}
-  - component: {fileID: 65821222816178202}
   - component: {fileID: 23541961725378434}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,9 +37,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4411738069972688}
   - component: {fileID: 33360041881378430}
-  - component: {fileID: 65546279006869346}
   - component: {fileID: 23666282720170840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,9 +54,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4341711016390302}
   - component: {fileID: 33827111408812024}
-  - component: {fileID: 65098907062046392}
   - component: {fileID: 23164354198330536}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +70,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4258375428601074}
-  m_Layer: 0
+  - component: {fileID: 60034458440854222}
+  - component: {fileID: 60142491085658036}
+  m_Layer: 12
   m_Name: Obstacle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,9 +88,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4855580688320842}
   - component: {fileID: 33181251799469798}
-  - component: {fileID: 65026139449818882}
   - component: {fileID: 23221591571586928}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,9 +105,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4843351291006812}
   - component: {fileID: 33295774686594778}
-  - component: {fileID: 65341377890822040}
   - component: {fileID: 23100727161009706}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,9 +122,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4715379752943904}
   - component: {fileID: 33603580409008092}
-  - component: {fileID: 65764064056450702}
   - component: {fileID: 23864216599425486}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,9 +139,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4204818974373812}
   - component: {fileID: 33967788983558692}
-  - component: {fileID: 65328773350327292}
   - component: {fileID: 23653570409586156}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,9 +156,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4162376185728526}
   - component: {fileID: 33272098014897706}
-  - component: {fileID: 65582701502320250}
   - component: {fileID: 23980275705006336}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +210,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250475093249894}
   m_LocalRotation: {x: -0, y: -0, z: 0.9981533, w: -0.060745344}
-  m_LocalPosition: {x: 2.71, y: 6.69, z: 0.019597515}
+  m_LocalPosition: {x: 1.96, y: 9.6, z: 0.019597515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4843351291006812}
@@ -623,99 +617,69 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1863879198365214}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65026139449818882
-BoxCollider:
+--- !u!60 &60034458440854222
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1312263382492954}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1250475093249894}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65098907062046392
-BoxCollider:
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.3166113, y: 2.025823}
+      - {x: 3.575636, y: 2.2971954}
+      - {x: 8.768745, y: 0.78906655}
+      - {x: 8.982389, y: 1.5356879}
+      - {x: 3.763304, y: 3.0177217}
+      - {x: 3.5796146, y: 3.3945656}
+      - {x: 2.8170779, y: 3.629106}
+      - {x: 2.2891498, y: 2.9681127}
+      - {x: 2.5436158, y: 2.2836838}
+--- !u!60 &60142491085658036
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1160994680636662}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 1250475093249894}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65328773350327292
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1863879198365214}
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65341377890822040
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1738799875529064}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65546279006869346
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1127462315141866}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65582701502320250
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1882742393477022}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65764064056450702
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1817999132629716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65821222816178202
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065041870134358}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.114694536, y: 3.830875}
+      - {x: -0.44614425, y: 3.8459213}
+      - {x: -0.6448401, y: 3.5432296}
+      - {x: -3.3214016, y: 3.5769114}
+      - {x: -3.3649268, y: 2.8018801}
+      - {x: -0.5133311, y: 2.7459173}
+      - {x: -0.33381492, y: 2.4853375}
+      - {x: 0.15605786, y: 2.497566}
+      - {x: 0.5226598, y: 3.2062416}
