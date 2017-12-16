@@ -458,7 +458,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 258992233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.48000014, y: 1.67, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -538,6 +538,7 @@ MonoBehaviour:
   vUpSpeedMax: 6
   vDownRampupTime: 1
   vUpRampupTime: 0.5
+  Enabled: 1
 --- !u!114 &556587695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,7 +657,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 556587691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: 4.11, z: -1}
+  m_LocalPosition: {x: -0.3, y: 4.11, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 706790187}
@@ -903,11 +904,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7c7730de67847dab4a2f90ae6f0f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: dasisteintest
   superSegments:
-  - {fileID: 4301751105764736, guid: ee0b85bcc31fb444fa09e999ff0f395d, type: 2}
-  - {fileID: 4301751105764736, guid: ee0b85bcc31fb444fa09e999ff0f395d, type: 2}
-  - {fileID: 4301751105764736, guid: ee0b85bcc31fb444fa09e999ff0f395d, type: 2}
+  - {fileID: 1435819072633972, guid: 671fe43f1535d4e6baa649bd984ffb18, type: 2}
+  - {fileID: 1468766497304088, guid: 119b0908f42c24f0399be9dec706092e, type: 2}
+  - {fileID: 1142968443561796, guid: 14b4767d389674f74a4291857b4dbd8d, type: 2}
+  - {fileID: 1098691968497486, guid: fbea60b9e58b549f18479cb6324fe92d, type: 2}
+  - {fileID: 1411835688753218, guid: 6e6a518505187419196d6f284451622c, type: 2}
+  - {fileID: 1758413633221656, guid: 388dc094b43684ff09cc3eb5183f1d42, type: 2}
+  - {fileID: 1519234984024016, guid: ae93162b693e44ed7ad18acc13bd8cd0, type: 2}
+  - {fileID: 1027739105952974, guid: 5a704ac3f1b5f42888d70a67e478bab9, type: 2}
+  - {fileID: 1145870773899404, guid: c9a4d145e03c942029e8e25f13adce31, type: 2}
+  - {fileID: 1892457597446308, guid: 959b34122e44545deb955722fb1aa6f8, type: 2}
+  - {fileID: 1268289584869220, guid: 8ba5199cc5ada4447842022d7cf37418, type: 2}
+  - {fileID: 1074489704946112, guid: d82e87dabe7414785b2c4d8d435dad08, type: 2}
+  - {fileID: 1099771782339050, guid: e415b281f145d4681bd783672b931357, type: 2}
+  startSegment: {fileID: 1524775733510792, guid: 355769dcef70f46df823ddd3bfac5c6a,
+    type: 2}
+  endSegment: {fileID: 1129140417867992, guid: 7186452484807409f8bbe8576cf18afc, type: 2}
+  LevelLength: 100
+  segmentHeight: 12
 --- !u!4 &1466898218
 Transform:
   m_ObjectHideFlags: 0

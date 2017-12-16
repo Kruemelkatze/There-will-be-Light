@@ -4,24 +4,43 @@ using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
 
-	public Transform[] superSegments;
+	public GameObject[] superSegments;
+	public GameObject startSegment;
+	public GameObject endSegment;
+	public int LevelLength;
 
 	private float x = 0;
 	private float y = 0;
 	private float z = 0;
 
-	public float superSegmentHeight = 47f;
+	public float segmentHeight = 12f;
 
 	// Use this for initialization
 	void Start () {
- 		for (int i = 0; i < 10; i++) {
+
+        Random.seed = GameManager.Seed;
+
+		Instantiate(startSegment, new Vector3(x, y, z), Quaternion.identity);
+
+		for (int i = 0; i < LevelLength; i++) {
 			int segmentID = (int)Mathf.Floor(Random.value * (superSegments.Length));
 
-			Instantiate(superSegments[segmentID], new Vector3(x, y, z), Quaternion.identity);
+			y -= segmentHeight;
 
-			y -= superSegmentHeight;
+			// randomly rotate the segments
+			if (Random.Range (1, 3) % 2 == 0) {
+				Instantiate(superSegments[segmentID], new Vector3(x, y, z), Quaternion.Euler(0,180f,0));
+			} else {
+				Instantiate(superSegments[segmentID], new Vector3(x, y, z), Quaternion.identity);
+			}
+
+
+
+
 
 		}
+
+		Instantiate(endSegment, new Vector3(x, y - segmentHeight, z), Quaternion.identity);
 
 	}
 	

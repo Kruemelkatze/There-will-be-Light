@@ -64,12 +64,22 @@ public class playerCollison : MonoBehaviour
         {
             Debug.Log("BOOM");
             CreateSplash();
+            if (Hub.Get<GameManager>().CurrentColor == GameManager.PlayerColor.Blue)
+            {
+                Vector3 vec3Checkpoint = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
+                GameObject.FindGameObjectWithTag("checkpoint").transform.position = new Vector3(vec3Checkpoint.x, other.transform.position.y, other.transform.position.z);
+            }
             ThereWillBeLight();
 
             DeactivateSun();
             StartCoroutine(waitNewTurn());
             //this.transform.position = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
         }
+    }
+   
+    private void setNewCheckpoint()
+    {
+
     }
 
     private void DeactivateSun()
