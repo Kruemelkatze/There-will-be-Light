@@ -273,8 +273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpoint: {fileID: 1110842598290370, guid: 2111454b8f59d4d4484de40b352de8d5, type: 2}
-  CurrentColor: 2
+  CurrentColor: 1
   CheckpointSpawnOffset: {x: 0, y: -2}
+  ColorDistribution: 01000000010000000100000001000000000000000000000000000000000000000200000002000000
   GameStarted: 0
 --- !u!114 &114861539240140724
 MonoBehaviour:

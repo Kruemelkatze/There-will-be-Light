@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
 
     public Vector2 CheckpointSpawnOffset = new Vector2(0, 0);
 
+    public PlayerColor[] ColorDistribution = {
+        PlayerColor.Yellow, PlayerColor.Yellow,PlayerColor.Yellow,PlayerColor.Yellow,PlayerColor.Yellow, // 50%
+        PlayerColor.Red, PlayerColor.Red, PlayerColor.Red, // 30%
+        PlayerColor.Blue, PlayerColor.Blue, // 20%
+    };
+
     public static int Seed
     {
         get
@@ -50,9 +56,18 @@ public class GameManager : MonoBehaviour
         Instantiate(checkpoint, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
-    public void switchColor()
+    public void switchColor(PlayerColor? color = null)
     {
-        CurrentColor = (PlayerColor)Random.Range(0, 3);
+        if (color != null)
+        {
+            CurrentColor = color.Value;
+        }
+        else
+        {
+            int i = Random.Range(0, ColorDistribution.Length);
+            CurrentColor = ColorDistribution[i];
+        }
+
         Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
     }
 
@@ -72,7 +87,7 @@ public class GameManager : MonoBehaviour
         SetupLevel();
         GameStarted = true;
         _player.SetActive(true);
-        Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
+        switchColor(CurrentColor);
         Hub.Get<PlayerMovement2>().Enabled = true;
     }
 }

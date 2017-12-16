@@ -17,6 +17,7 @@ public class LevelGeneration : MonoBehaviour {
 
     public List<GameObject> DisableOnGenerated;
 
+
 	// Use this for initialization
 	public void GenerateLevel () {
 		Instantiate(startSegment, new Vector3(x, y, z), Quaternion.identity);
