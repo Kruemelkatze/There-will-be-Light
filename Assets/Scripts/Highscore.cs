@@ -13,4 +13,9 @@ public class Highscore : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public int GetHighscore(string seed)
+    {
+        return 1337;
+    }
 }
