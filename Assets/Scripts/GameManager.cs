@@ -2,22 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
+
+    public enum PlayerColor
+    {
+        Red,
+        Yellow,
+        Blue
+    }
 
     public GameObject checkpoint;
-    
+    public static string StringSeed = "";
+    public PlayerColor CurrentColor = PlayerColor.Yellow;
 
-	// Use this for initialization
-	void Start () {
+    public static int Seed
+    {
+        get
+        {
+            return StringSeed.GetHashCode();
+        }
+    }
+
+    // Use this for initialization
+    void Start()
+    {
         generateLevel();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
+    }
 
-    void generateLevel(){
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    void generateLevel()
+    {
         generateCheckpoint();
     }
 
@@ -26,4 +47,9 @@ public class GameManager : MonoBehaviour {
         Instantiate(checkpoint, new Vector3(0.25f, 4, 0), Quaternion.identity);
     }
 
+    public void switchColor()
+    {
+        CurrentColor = (PlayerColor)Random.Range(0, 3);
+        Hub.Get<EventHub>().TriggerPlayercolorChangedEvent();
+    }
 }

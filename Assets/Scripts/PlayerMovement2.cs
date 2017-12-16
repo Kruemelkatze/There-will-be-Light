@@ -24,6 +24,8 @@ public class PlayerMovement2 : MonoBehaviour
     public float vDownRampupTime = 2f;
     public float vUpRampupTime = 1f;
 
+    public bool Enabled = true;
+
 
     // Use this for initialization
     void Start()
@@ -36,6 +38,12 @@ public class PlayerMovement2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!Enabled)
+        {
+            rigidbody2D.velocity = Vector2.zero;
+            return;
+        }
+
         var velocity = rigidbody2D.velocity;
 
         float horizontalSpeed = GetHorizontalSpeed(velocity);

@@ -26,6 +26,10 @@ public class Hub : MonoBehaviour
         //E.g.
         // Register<TestAudioControl>();
         // Hub.Get<TestAudioControl>().PlayDefaultMusic();
+
+        Register<GameManager>();
+        Register<LevelGeneration>();
+        Register<PlayerMovement2>();
     }
 
     public static T Get<T>()

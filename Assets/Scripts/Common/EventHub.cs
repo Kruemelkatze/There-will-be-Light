@@ -18,6 +18,8 @@ public class EventHub : MonoBehaviour
     public event IntegerParamEvent ExampleIntegerEvent;
     public event GameObjectParamEvent ExampleGameObjectEvent;
     public event GameObjectIntegerParamEvent ExampleCombinedEvent;
+
+    public event VoidEvent PlayerColorChanged;
     #endregion
 
     #region Triggers
@@ -31,6 +33,10 @@ public class EventHub : MonoBehaviour
         ExampleVoidEvent?.Invoke();
     }
 
+    public void TriggerPlayercolorChangedEvent()
+    {
+        PlayerColorChanged?.Invoke();
+    }
 
     //You get the idea on how this is done...
     //Generic .Invoke(...) cannot be done, as the event fields cannot be accessed from outside this class :(

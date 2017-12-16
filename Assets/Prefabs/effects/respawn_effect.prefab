@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 19835186}
   - component: {fileID: 19989996}
   m_Layer: 0
-  m_Name: explode_2
+  m_Name: respawn_effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

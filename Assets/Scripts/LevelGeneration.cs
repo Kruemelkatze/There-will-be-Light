@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
 
-	public string seed;
 	public Transform[] superSegments;
 
 	private float x = 0;
@@ -15,9 +14,8 @@ public class LevelGeneration : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 
-		Random.seed = seed.GetHashCode();
+        Random.seed = GameManager.Seed;
 
  		for (int i = 0; i < 10; i++) {
 			int segmentID = (int)Mathf.Floor(Random.value * (superSegments.Length));

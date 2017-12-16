@@ -13,33 +13,26 @@ public class PlayerColor : MonoBehaviour {
 
 	private Light playerLight;
 
-	// Use this for initialization
-	void Start () {
-		SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+    void Start()
+    {
+        Hub.Get<EventHub>().PlayerColorChanged += ColorChanged;
+        playerLight = GetComponent<Light>();
+    }
 
-		playerLight = GetComponent<Light> ();
-
-		switch((RndColor)Random.Range(0, 3)) {
-			case RndColor.Red:
-				renderer.color = new Color(0.937f, 0.231f, 0.212f, 1f);
-				playerLight.color = new Color(0.937f, 0.231f, 0.212f, 1f);
-				print("set player to color red");
-				break;
-
-			case RndColor.Green:
-				renderer.color = new Color(0.059f, 0.608f, 0.059f, 1f);
-				playerLight.color = new Color(0.059f, 0.608f, 0.059f, 1f);
-				print("set player to color green");
-				break;
-
-			case RndColor.Blue:
-				renderer.color = new Color(0f, 0.51f, 0.784f, 1f);
-				playerLight.color = new Color(0f, 0.51f, 0.784f, 1f);
-				break;
-
-		}
-
-
+    // Use this for initialization
+    void ColorChanged () {
+        switch (Hub.Get<GameManager>().CurrentColor)
+        {
+            case GameManager.PlayerColor.Red:
+                playerLight.color = new Color(0.937f, 0.231f, 0.212f, 1f);
+                break;
+            case GameManager.PlayerColor.Blue:
+                playerLight.color = new Color(0f, 0.51f, 0.784f, 1f);
+                break;
+            case GameManager.PlayerColor.Yellow:
+                playerLight.color = new Color(0.608f, 0.608f, 0.059f, 1f);
+                break;
+        }
 	}
 	
 	// Update is called once per frame
