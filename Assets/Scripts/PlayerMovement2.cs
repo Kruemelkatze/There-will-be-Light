@@ -34,7 +34,10 @@ public class PlayerMovement2 : MonoBehaviour
     {
         get
         {
-            return rigidbody2D.velocity.y;
+            if (rigidbody2D != null)
+                return rigidbody2D.velocity.y;
+            else
+                return vSpeedDefault;
         }
     }
 
@@ -61,15 +64,17 @@ public class PlayerMovement2 : MonoBehaviour
         var velocity = rigidbody2D.velocity;
 
         float horizontalSpeed = GetHorizontalSpeed(velocity);
-        float verticalSpeed = GetVerticalSpeed(velocity);             
+        float verticalSpeed = GetVerticalSpeed(velocity);
 
         rigidbody2D.velocity = new Vector2(horizontalSpeed, verticalSpeed);
 
         if (EnablePitchChange && !_pC.CollisionDisabled)
         {
-            float pitchChangePercent = (-verticalSpeed - vSpeedDefault) /vDownSpeedMax;
+            float pitchChangePercent = (-verticalSpeed - vSpeedDefault) / vDownSpeedMax;
             _pmm.ChangePitch(pitchChangePercent);
-        } else if (_pC.CollisionDisabled) {
+        }
+        else if (_pC.CollisionDisabled)
+        {
             _pmm.ChangePitch(0);
         }
     }
