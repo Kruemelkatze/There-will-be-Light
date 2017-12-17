@@ -235,6 +235,7 @@ MonoBehaviour:
   SeedTextField: {fileID: 0}
   HUD: {fileID: 0}
   SeedScreen: {fileID: 0}
+  EndScreen: {fileID: 0}
   DefaultSeeds:
   - Sirius
   - Wega
@@ -249,6 +250,7 @@ MonoBehaviour:
   WaitAfterEmptySeed: 1
   hudSeed: {fileID: 0}
   hudHighscore: {fileID: 0}
+  EndHighscore: {fileID: 0}
 --- !u!114 &114138848947491834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,6 +372,8 @@ MonoBehaviour:
       value: {fileID: 8300000, guid: 37ab6e8e238b16c4cb82b11ff97a07d6, type: 3}
     - name: key2
       value: {fileID: 8300000, guid: 9b750ef69287b70448057f3022b9d524, type: 3}
+    - name: pixeldeath
+      value: {fileID: 8300000, guid: af84371dcb10a814da92dd62ea110866, type: 3}
   MusicClips:
     values:
     - name: 
