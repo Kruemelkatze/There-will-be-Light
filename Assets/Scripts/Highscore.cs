@@ -21,6 +21,11 @@ public class Highscore : MonoBehaviour {
 		if (Hub.Get<GameManager>().GameStarted)
         {
             highscore -= (Time.deltaTime * 100f);
+
+            if (highscore < 0f)
+            {
+                highscore = 0f;
+            }
         }
 	}
 
@@ -61,9 +66,11 @@ public class Highscore : MonoBehaviour {
         highscore = maxPoints;
     }
 
-    public void EndLevel()
+    public string EndLevel()
     {
         SetSeedHighscore(currentSeed, highscore);
+
+        return GetCurrentHighscore();
     }
 
     public string GetCurrentHighscore()
