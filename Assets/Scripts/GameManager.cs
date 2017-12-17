@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager Instance = null;
+
     public enum PlayerColor
     {
         Red,
@@ -18,6 +20,23 @@ public class GameManager : MonoBehaviour
     private GameObject _player;
 
     public Vector2 CheckpointSpawnOffset = new Vector2(0, 0);
+
+    // Awake is always called before any Start functions
+    void Awake()
+    {
+        // Check if instance already exists
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        //Sets this to not be destroyed when reloading scene
+        DontDestroyOnLoad(gameObject);
+    }
 
     public PlayerColor[] ColorDistribution = {
         PlayerColor.Yellow, PlayerColor.Yellow,PlayerColor.Yellow,PlayerColor.Yellow,PlayerColor.Yellow, // 50%
@@ -34,6 +53,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool GameStarted = false;
+    public bool GamePaused = true;
 
     // Use this for initialization
     void Start()
@@ -89,5 +109,24 @@ public class GameManager : MonoBehaviour
         _player.SetActive(true);
         switchColor(CurrentColor);
         Hub.Get<PlayerMovement2>().Enabled = true;
+        Hub.Get<Highscore>().StartLevel(StringSeed);
+    }
+
+    public void PauseGame()
+    {
+        Hub.Get<PlayerMovement2>().Enabled = false;
+        GamePaused = true;
+    }
+
+    public void RemainGame()
+    {
+        Hub.Get<PlayerMovement2>().Enabled = true;
+        GamePaused = false;
+    }
+
+    public void EndGame()
+    {
+        Hub.Get<PlayerMovement2>().Enabled = false;
+        Hub.Get<Highscore>().EndLevel();
     }
 }

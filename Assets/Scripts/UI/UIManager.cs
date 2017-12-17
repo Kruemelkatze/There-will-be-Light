@@ -25,6 +25,30 @@ public class UIManager : MonoBehaviour
         SeedTextField.Select();
     }
 
+    void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Hub.Get<GameManager>().GameStarted)
+            {
+                Application.LoadLevel(Application.loadedLevel);
+            }
+
+            if (!Hub.Get<GameManager>().GamePaused)
+            {
+                SeedScreen.SetActive(false);
+                HUD.SetActive(true);
+                Hub.Get<GameManager>().RemainGame();
+            }
+            else
+            {
+                Hub.Get<GameManager>().PauseGame();
+                HUD.SetActive(false);
+                SeedScreen.SetActive(true);
+            }
+        }
+    }
+
     public void OnSeedEditEnd()
     {
         var text = SeedTextField.text;
@@ -48,6 +72,7 @@ public class UIManager : MonoBehaviour
 
     public void InitHUD(string seed)
     {
+        Debug.Log("init." + seed);
         hudSeed.text = seed;
         hudHighscore.text = Hub.Get<Highscore>().GetHighscore(seed).ToString();
     }

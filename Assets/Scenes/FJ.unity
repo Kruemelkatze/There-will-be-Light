@@ -297,11 +297,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea20ffd8874bd9741b4cd8cc45bfa591, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &205736235 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1152221155965894, guid: 24c9758f20d26614fb497fe01d95c7b3,
+--- !u!114 &145587805 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114901783260943100, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
     type: 2}
-  m_PrefabInternal: {fileID: 746492820}
+  m_PrefabInternal: {fileID: 145587804}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &145587806 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114469643184269228, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
+    type: 2}
+  m_PrefabInternal: {fileID: 145587804}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &145587807 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1459964469905150, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
+    type: 2}
+  m_PrefabInternal: {fileID: 145587804}
 --- !u!1 &366916590
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +546,17 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24c9758f20d26614fb497fe01d95c7b3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &746492821 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114085125914074366, guid: 24c9758f20d26614fb497fe01d95c7b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 746492820}
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &746492822 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1866721366694466, guid: 24c9758f20d26614fb497fe01d95c7b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 746492820}
 --- !u!1001 &1109599713
 Prefab:
   m_ObjectHideFlags: 0
@@ -577,7 +600,27 @@ Prefab:
         type: 2}
       propertyPath: SeedTextField
       value: 
-      objectReference: {fileID: 205736235}
+      objectReference: {fileID: 746492821}
+    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: HUD
+      value: 
+      objectReference: {fileID: 145587807}
+    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: SeedScreen
+      value: 
+      objectReference: {fileID: 746492822}
+    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: hudSeed
+      value: 
+      objectReference: {fileID: 145587806}
+    - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: hudHighscore
+      value: 
+      objectReference: {fileID: 145587805}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
   m_IsPrefabParent: 0

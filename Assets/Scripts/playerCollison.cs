@@ -66,15 +66,24 @@ public class playerCollison : MonoBehaviour
         if (CollisionDisabled)
             return;
 
-        if (Contains(ObstacleLayerMask, other.gameObject.layer))
+        if (other.gameObject.tag.Equals("endOfMap"))
         {
-            Debug.Log("BOOM");
+            Hub.Get<GameManager>().EndGame();
             CreateSplash();
             ThereWillBeLight();
+        }
+        else
+        {
+            if (Contains(ObstacleLayerMask, other.gameObject.layer))
+            {
+                Debug.Log("BOOM");
+                CreateSplash();
+                ThereWillBeLight();
 
-            DeactivateSun();
-            StartCoroutine(waitNewTurn());
-            //this.transform.position = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
+                DeactivateSun();
+                StartCoroutine(waitNewTurn());
+                //this.transform.position = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
+            }
         }
     }
 
