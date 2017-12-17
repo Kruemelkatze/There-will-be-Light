@@ -12,10 +12,12 @@ public class playerCollison : MonoBehaviour
 
     public GameObject implosion;
     public GameObject sunAnimation;
+    private GameObject trail;
 
     private Color red = new Color(1, 0.5f, 0, 1);
     private Color blue = new Color(0, 0, 1, 0.7f);
     private Color yellow = new Color(1, 1, 1, 1);
+    private Color trueYellow = new Color(1, 198f/255, 9/255, 1);
 
     public GameObject RedLight;
     public GameObject BlueLight;
@@ -32,7 +34,10 @@ public class playerCollison : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        trail = GameObject.FindWithTag("trail");
+
         Hub.Get<EventHub>().PlayerColorChanged += ColorChanged;
+        ColorChanged();
     }
 
     private void ColorChanged()
@@ -59,6 +64,9 @@ public class playerCollison : MonoBehaviour
     void changeColor(Color clr)
     {
         sunAnimation.GetComponent<ParticleSystem>().startColor = clr;
+
+        trail.GetComponent<ParticleSystem>().startColor = clr == yellow ? trueYellow : clr;
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -92,6 +100,7 @@ public class playerCollison : MonoBehaviour
     private void DeactivateSun()
     {
         sunAnimation.SetActive(false);
+        trail.SetActive(false);
         Hub.Get<PlayerMovement2>().Enabled = false;
         //StartCoroutine(waitNewTurn());
     }
@@ -165,6 +174,7 @@ public class playerCollison : MonoBehaviour
         StartCoroutine(EnableCollisionAfterTimeout());
 
         sunAnimation.SetActive(true);
+        trail.SetActive(true);
         Hub.Get<PlayerMovement2>().Enabled = true;
     }
 

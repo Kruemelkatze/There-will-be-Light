@@ -27,6 +27,8 @@ public class PlayerMovement2 : MonoBehaviour
     public bool Enabled = true;
     public bool EnablePitchChange = true;
 
+    private Transform _trail;
+
     private ParallelMusicManager _pmm;
     private playerCollison _pC;
 
@@ -50,6 +52,7 @@ public class PlayerMovement2 : MonoBehaviour
         rigidbody2D.velocity = Vector2.down * vSpeedDefault;
         _pmm = Hub.Get<ParallelMusicManager>();
         _pC = Hub.Get<playerCollison>();
+        _trail = GameObject.FindWithTag("trail")?.transform;
     }
 
     // Update is called once per frame
@@ -68,9 +71,9 @@ public class PlayerMovement2 : MonoBehaviour
 
         rigidbody2D.velocity = new Vector2(horizontalSpeed, verticalSpeed);
 
-        //Rotate player to movement
+        //Rotate Trail to movement
         float rot_z = Mathf.Atan2(verticalSpeed, horizontalSpeed) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
+        _trail.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
 
         //transform.rotation = Quaternion.LookRotation(rigidbody2D.velocity);
 

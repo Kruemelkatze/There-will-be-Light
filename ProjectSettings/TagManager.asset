@@ -8,6 +8,7 @@ TagManager:
   - checkpoint
   - seedinput
   - endOfMap
+  - trail
   layers:
   - Default
   - TransparentFX
