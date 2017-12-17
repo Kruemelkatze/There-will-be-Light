@@ -763,7 +763,6 @@ GameObject:
   - component: {fileID: 33638538097290990}
   - component: {fileID: 23578661755823308}
   - component: {fileID: 58296572606697304}
-  - component: {fileID: 114389014636416684}
   m_Layer: 12
   m_Name: Sphere
   m_TagString: endOfMap
@@ -7622,18 +7621,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 3
---- !u!114 &114389014636416684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402555221448508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e92d1118f4732446a3272dc660a54ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lblHighScore: {fileID: 114613694989024964}
 --- !u!114 &114409541290756052
 MonoBehaviour:
   m_ObjectHideFlags: 1

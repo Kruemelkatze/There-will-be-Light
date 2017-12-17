@@ -68,7 +68,6 @@ public class PlayerMovement2 : MonoBehaviour
         if (EnablePitchChange && !_pC.CollisionDisabled)
         {
             float pitchChangePercent = (-verticalSpeed - vSpeedDefault) /vDownSpeedMax;
-            Debug.Log(pitchChangePercent);
             _pmm.ChangePitch(pitchChangePercent);
         } else if (_pC.CollisionDisabled) {
             _pmm.ChangePitch(0);

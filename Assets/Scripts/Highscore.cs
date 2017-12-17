@@ -41,7 +41,7 @@ public class Highscore : MonoBehaviour {
             return highscores[seed];
         }
 
-        return maxPoints;
+        return 0;
     }
 
     private void SetSeedHighscore(string seed, float newHighscore)

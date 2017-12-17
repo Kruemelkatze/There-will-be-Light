@@ -64,7 +64,8 @@ public class UIManager : MonoBehaviour
         {
             HUD.SetActive(true);
             SeedScreen.SetActive(false);
-            Hub.Get<GameManager>().StartGame(text.ToLower());
+            text = text.ToLower();
+            Hub.Get<GameManager>().StartGame(text);
         }
 
         InitHUD(text);
