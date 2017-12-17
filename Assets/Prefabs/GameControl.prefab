@@ -294,6 +294,7 @@ MonoBehaviour:
   RedTracks: 000000000200000004000000
   BlueTracks: 010000000200000005000000
   DefaultTracks: 
+  MaxMusicVolume: 0.5
 --- !u!114 &114453076303739476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,7 +353,7 @@ MonoBehaviour:
   checkpoint: {fileID: 1110842598290370, guid: 2111454b8f59d4d4484de40b352de8d5, type: 2}
   CurrentColor: 1
   CheckpointSpawnOffset: {x: 0, y: -2}
-  ColorDistribution: 01000000010000000100000001000000000000000000000000000000000000000200000002000000
+  ColorDistribution: 01000000010000000100000001000000000000000000000000000000020000000200000002000000
   GameStarted: 0
   GamePaused: 1
 --- !u!114 &114825741974884834
@@ -374,6 +375,8 @@ MonoBehaviour:
       value: {fileID: 8300000, guid: 9b750ef69287b70448057f3022b9d524, type: 3}
     - name: pixeldeath
       value: {fileID: 8300000, guid: af84371dcb10a814da92dd62ea110866, type: 3}
+    - name: explosion
+      value: {fileID: 8300000, guid: 7848cd8af1d802141a0e19764475ae7c, type: 3}
   MusicClips:
     values:
     - name: 

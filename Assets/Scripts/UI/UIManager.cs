@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
         TransitionKit.instance.transitionWithDelegate(pixelater);
         Hub.Get<AudioManager>().PlaySound("pixeldeath");
 
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.8f);
         Application.LoadLevel(Application.loadedLevel);
     }
 

@@ -66,6 +66,8 @@ public class playerCollison : MonoBehaviour
         if (CollisionDisabled)
             return;
 
+        Hub.Get<AudioManager>().PlaySound("explosion");
+
         if (other.gameObject.tag.Equals("endOfMap"))
         {
             Hub.Get<GameManager>().EndGame();

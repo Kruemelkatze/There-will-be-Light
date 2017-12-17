@@ -28,6 +28,8 @@ public class ParallelMusicManager : MonoBehaviour
 
     private int[] _currentTracks;
 
+    public float MaxMusicVolume = 1;
+
     // Use this for initialization
     void Start()
     {
@@ -88,7 +90,7 @@ public class ParallelMusicManager : MonoBehaviour
 
             if (!playedBefore && playNow)
             {
-                source.FadeTo(1, FadeSpeed, null);
+                source.FadeTo(MaxMusicVolume, FadeSpeed, null);
             }
             else if (playedBefore && !playNow)
             {
