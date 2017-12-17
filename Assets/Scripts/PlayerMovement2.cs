@@ -25,6 +25,10 @@ public class PlayerMovement2 : MonoBehaviour
     public float vUpRampupTime = 1f;
 
     public bool Enabled = true;
+    public bool EnablePitchChange = true;
+
+    private ParallelMusicManager _pmm;
+    private playerCollison _pC;
 
     public float CurrentVerticalSpeed
     {
@@ -41,6 +45,8 @@ public class PlayerMovement2 : MonoBehaviour
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rigidbody2D = GetComponent<Rigidbody2D>();
         rigidbody2D.velocity = Vector2.down * vSpeedDefault;
+        _pmm = Hub.Get<ParallelMusicManager>();
+        _pC = Hub.Get<playerCollison>();
     }
 
     // Update is called once per frame
@@ -57,7 +63,16 @@ public class PlayerMovement2 : MonoBehaviour
         float horizontalSpeed = GetHorizontalSpeed(velocity);
         float verticalSpeed = GetVerticalSpeed(velocity);             
 
-        rigidbody2D.velocity = new Vector2(horizontalSpeed, verticalSpeed);        
+        rigidbody2D.velocity = new Vector2(horizontalSpeed, verticalSpeed);
+
+        if (EnablePitchChange && !_pC.CollisionDisabled)
+        {
+            float pitchChangePercent = (-verticalSpeed - vSpeedDefault) /vDownSpeedMax;
+            Debug.Log(pitchChangePercent);
+            _pmm.ChangePitch(pitchChangePercent);
+        } else if (_pC.CollisionDisabled) {
+            _pmm.ChangePitch(0);
+        }
     }
 
     private float GetHorizontalSpeed(Vector2 currentVelocity)

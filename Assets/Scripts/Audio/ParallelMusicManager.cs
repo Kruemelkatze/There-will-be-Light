@@ -6,8 +6,8 @@ using UnityEngine;
 public class ParallelMusicManager : MonoBehaviour
 {
     private const float LowerVolumeLimit = 0.05f;
-
     public float FadeSpeed = 0.3f;
+    public float MaxPitchDeviation = 0.2f;
 
     public AudioClip[] AudioClips;
 
@@ -25,6 +25,8 @@ public class ParallelMusicManager : MonoBehaviour
     public int[] BlueTracks = { 1, 2, 5 };
 
     public int[] DefaultTracks = new int[0];
+
+    private int[] _currentTracks;
 
     // Use this for initialization
     void Start()
@@ -49,6 +51,15 @@ public class ParallelMusicManager : MonoBehaviour
         Hub.Get<EventHub>().PlayerColorChanged += ColorChanged;
     }
 
+    public void ChangePitch(float increaseRatioInPercent)
+    {
+        float absPitch = 1f + MaxPitchDeviation * increaseRatioInPercent;
+        foreach (var source in AudioSources)
+        {
+            source.pitch = absPitch;
+        }
+    }
+
     private void ColorChanged()
     {
         switch (Hub.Get<GameManager>().CurrentColor)
@@ -67,6 +78,7 @@ public class ParallelMusicManager : MonoBehaviour
 
     private void SetTracks(int[] tracks)
     {
+        _currentTracks = tracks;
         Debug.Log($"Now playing: {tracks[0]} {tracks[1]} {tracks[2]}");
         for (int i = 0; i < AudioSources.Length; i++)
         {

@@ -144,6 +144,7 @@ public class playerCollison : MonoBehaviour
 
     IEnumerator waitNewTurn()
     {
+        CollisionDisabled = true;
         yield return new WaitForSeconds(WaitBeforePixel);
 
         var pixelater = new PixelateTransition()
@@ -158,15 +159,14 @@ public class playerCollison : MonoBehaviour
         var targetPos = GameObject.FindGameObjectWithTag("checkpoint").transform.position;
         this.transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
 
-        StartCoroutine(DisableCollision());
+        StartCoroutine(EnableCollisionAfterTimeout());
 
         sunAnimation.SetActive(true);
         Hub.Get<PlayerMovement2>().Enabled = true;
     }
 
-    IEnumerator DisableCollision()
+    IEnumerator EnableCollisionAfterTimeout()
     {
-        CollisionDisabled = true;
         yield return new WaitForSeconds(ImmunityTime);
         CollisionDisabled = false;
     }

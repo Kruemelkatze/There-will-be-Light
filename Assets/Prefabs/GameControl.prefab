@@ -42,6 +42,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1273185196260326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4472790260828778}
+  - component: {fileID: 114825741974884834}
+  - component: {fileID: 114385214122057648}
+  - component: {fileID: 114453076303739476}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1367768907398528
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +163,19 @@ Transform:
   m_Father: {fileID: 4708964627320036}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4472790260828778
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273185196260326}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4708964627320036}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4708964627320036
 Transform:
   m_ObjectHideFlags: 1
@@ -160,6 +191,7 @@ Transform:
   - {fileID: 4968968115805658}
   - {fileID: 4083438785023148}
   - {fileID: 4736150696157184}
+  - {fileID: 4472790260828778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -229,6 +261,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPoints: 9999
+--- !u!114 &114385214122057648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273185196260326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f553c589fb647214f83eb822b316d04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeSpeed: 1
+  MaxPitchDeviation: 0.2
+  AudioClips:
+  - {fileID: 8300000, guid: b7af8f3644aa4004295597ae28989556, type: 3}
+  - {fileID: 8300000, guid: 20d39b21913b0d240b53ccaf325a74bc, type: 3}
+  - {fileID: 8300000, guid: 6fbbc1e5a8a041940b3caaa9e5a7b4f3, type: 3}
+  - {fileID: 8300000, guid: 5cd30da642e0bcc41baee5b2cc1a8934, type: 3}
+  - {fileID: 8300000, guid: 2cba7fecfdd6c5149bc41bb6bd203dfc, type: 3}
+  - {fileID: 8300000, guid: a4ad5d9f71de14549adf7f8ffd5fe989, type: 3}
+  AudioSources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  YellowTracks: 000000000200000003000000
+  RedTracks: 000000000200000004000000
+  BlueTracks: 010000000200000005000000
+  DefaultTracks: 
+--- !u!114 &114453076303739476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273185196260326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf51db37df76dd448d35abb223caf95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114531196048062696
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,6 +352,36 @@ MonoBehaviour:
   CheckpointSpawnOffset: {x: 0, y: -2}
   ColorDistribution: 01000000010000000100000001000000000000000000000000000000000000000200000002000000
   GameStarted: 0
+  GamePaused: 1
+--- !u!114 &114825741974884834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1273185196260326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b43744f697eb344488448efa66c6fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundClips:
+    values: []
+  MusicClips:
+    values:
+    - name: 
+      value: {fileID: 8300000, guid: b7af8f3644aa4004295597ae28989556, type: 3}
+    - name: 
+      value: {fileID: 8300000, guid: 20d39b21913b0d240b53ccaf325a74bc, type: 3}
+    - name: 
+      value: {fileID: 8300000, guid: 6fbbc1e5a8a041940b3caaa9e5a7b4f3, type: 3}
+    - name: 
+      value: {fileID: 8300000, guid: 5cd30da642e0bcc41baee5b2cc1a8934, type: 3}
+    - name: 
+      value: {fileID: 8300000, guid: 2cba7fecfdd6c5149bc41bb6bd203dfc, type: 3}
+    - name: 
+      value: {fileID: 8300000, guid: a4ad5d9f71de14549adf7f8ffd5fe989, type: 3}
+  DefaultMusic: 
+  IgnoreDuplicateMusic: 1
 --- !u!114 &114861539240140724
 MonoBehaviour:
   m_ObjectHideFlags: 1

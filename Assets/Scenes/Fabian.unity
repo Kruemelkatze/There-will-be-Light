@@ -217,9 +217,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea20ffd8874bd9741b4cd8cc45bfa591, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &379714346 stripped
+--- !u!114 &374368489 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114481491651286376, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
+  m_PrefabParentObject: {fileID: 114901783260943100, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
     type: 2}
   m_PrefabInternal: {fileID: 96788836}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -475,9 +475,9 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45a570ffd5e7bdc479b5ed462d6cd0ab, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1226326828 stripped
+--- !u!114 &1190484480 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114048813523035922, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
+  m_PrefabParentObject: {fileID: 114469643184269228, guid: ea20ffd8874bd9741b4cd8cc45bfa591,
     type: 2}
   m_PrefabInternal: {fileID: 96788836}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -606,12 +606,12 @@ Prefab:
         type: 2}
       propertyPath: hudSeed
       value: 
-      objectReference: {fileID: 379714346}
+      objectReference: {fileID: 1190484480}
     - target: {fileID: 114046882288035192, guid: f13f57c5bc78bb34f9745aa7f74b5106,
         type: 2}
       propertyPath: hudHighscore
       value: 
-      objectReference: {fileID: 1226326828}
+      objectReference: {fileID: 374368489}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
   m_IsPrefabParent: 0

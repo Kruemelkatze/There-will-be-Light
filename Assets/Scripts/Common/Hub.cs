@@ -30,7 +30,10 @@ public class Hub : MonoBehaviour
         Register<GameManager>();
         Register<LevelGeneration>();
         Register<PlayerMovement2>();
+        Register<playerCollison>();
         Register<Highscore>();
+        Register<ParallelMusicManager>();
+        Register<AudioManager>();
     }
 
     public static T Get<T>()
