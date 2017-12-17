@@ -67,6 +67,7 @@ public class UIManager : MonoBehaviour
 
     public void OnSeedEditEnd()
     {
+
         var text = SeedTextField.text;
         if (string.IsNullOrWhiteSpace(text))
         {
@@ -81,7 +82,7 @@ public class UIManager : MonoBehaviour
             HUD.SetActive(true);
             SeedScreen.SetActive(false);
             text = text.ToLower();
-            Hub.Get<GameManager>().StartGame(text);
+            StartCoroutine(CallStart(text, false));
         }
 
         InitHUD(text);
@@ -101,9 +102,10 @@ public class UIManager : MonoBehaviour
         EndHighscore.text = highscore;
     }
 
-    IEnumerator CallStart(string text)
+    IEnumerator CallStart(string text, bool waitbefore = true)
     {
-        yield return new WaitForSeconds(WaitAfterEmptySeed);
+        if (waitbefore)
+            yield return new WaitForSeconds(WaitAfterEmptySeed);
         var pixelater = new PixelateTransition()
         {
             nextScene = -1,
