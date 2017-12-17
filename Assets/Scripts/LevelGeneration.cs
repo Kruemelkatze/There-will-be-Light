@@ -22,7 +22,14 @@ public class LevelGeneration : MonoBehaviour {
 	public void GenerateLevel () {
 		Instantiate(startSegment, new Vector3(x, y, z), Quaternion.identity);
 
-		for (int i = 0; i < LevelLength; i++) {
+        var effectiveLevelLength = LevelLength;
+
+        if ("short".Equals(GameManager.StringSeed))
+        {
+            effectiveLevelLength = effectiveLevelLength / 2;
+        }
+
+		for (int i = 0; i < effectiveLevelLength; i++) {
 			int segmentID = (int)Mathf.Floor(Random.value * (superSegments.Length));
 
 			y -= segmentHeight;
