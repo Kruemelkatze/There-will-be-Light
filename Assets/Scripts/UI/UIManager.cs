@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     public GameObject HUD;
     public GameObject SeedScreen;
+    public GameObject EndScreen;
 
     public List<string> DefaultSeeds;
 
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
 
     public Text hudSeed;
     public Text hudHighscore;
+    public Text EndHighscore;
 
     // Use this for initialization
     void Start()
@@ -76,6 +78,13 @@ public class UIManager : MonoBehaviour
         Debug.Log("init." + seed);
         hudSeed.text = seed;
         hudHighscore.text = Hub.Get<Highscore>().GetHighscore(seed).ToString();
+    }
+
+    public void ShowEndScreen(string highscore)
+    {
+        Debug.Log("show end scene: " + highscore);
+        EndScreen.SetActive(true);
+        EndHighscore.text = highscore;
     }
 
     IEnumerator CallStart(string text)

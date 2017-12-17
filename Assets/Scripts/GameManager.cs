@@ -127,6 +127,6 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Hub.Get<PlayerMovement2>().Enabled = false;
-        Hub.Get<Highscore>().EndLevel();
+        Hub.Get<UIManager>().ShowEndScreen(Hub.Get<Highscore>().EndLevel());
     }
 }

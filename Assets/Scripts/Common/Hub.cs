@@ -34,6 +34,7 @@ public class Hub : MonoBehaviour
         Register<Highscore>();
         Register<ParallelMusicManager>();
         Register<AudioManager>();
+        Register<UIManager>();
     }
 
     public static T Get<T>()
