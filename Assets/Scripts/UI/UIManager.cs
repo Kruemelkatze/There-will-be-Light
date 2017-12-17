@@ -34,18 +34,18 @@ public class UIManager : MonoBehaviour
                 Application.LoadLevel(Application.loadedLevel);
             }
 
-            if (!Hub.Get<GameManager>().GamePaused)
-            {
-                SeedScreen.SetActive(false);
-                HUD.SetActive(true);
-                Hub.Get<GameManager>().RemainGame();
-            }
-            else
-            {
-                Hub.Get<GameManager>().PauseGame();
-                HUD.SetActive(false);
-                SeedScreen.SetActive(true);
-            }
+            //if (!Hub.Get<GameManager>().GamePaused)
+            //{
+            //    SeedScreen.SetActive(false);
+            //    HUD.SetActive(true);
+            //    Hub.Get<GameManager>().RemainGame();
+            //}
+            //else
+            //{
+            //    Hub.Get<GameManager>().PauseGame();
+            //    HUD.SetActive(false);
+            //    SeedScreen.SetActive(true);
+            //}
         }
     }
 

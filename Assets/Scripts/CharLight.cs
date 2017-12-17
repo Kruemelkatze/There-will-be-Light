@@ -13,6 +13,7 @@ public class CharLight : MonoBehaviour
     void Start()
     {
         Hub.Get<EventHub>().PlayerColorChanged += ColorChanged;
+        ColorChanged();
     }
 
     private void ColorChanged()
