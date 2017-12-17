@@ -93,4 +93,9 @@ public class UIManager : MonoBehaviour
         SeedScreen.SetActive(false);
         Hub.Get<GameManager>().StartGame(text);
     }
+
+    public void Typed()
+    {
+        Hub.Get<AudioManager>().PlaySound("key" + Random.Range(1, 3));
+    }
 }
