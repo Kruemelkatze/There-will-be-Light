@@ -365,7 +365,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundClips:
-    values: []
+    values:
+    - name: key1
+      value: {fileID: 8300000, guid: 37ab6e8e238b16c4cb82b11ff97a07d6, type: 3}
+    - name: key2
+      value: {fileID: 8300000, guid: 9b750ef69287b70448057f3022b9d524, type: 3}
   MusicClips:
     values:
     - name: 
