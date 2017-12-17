@@ -533,6 +533,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114825741974884834, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: SoundClips.values.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4708964627320036, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -590,6 +595,21 @@ Prefab:
       propertyPath: hudHighscore
       value: 
       objectReference: {fileID: 374368489}
+    - target: {fileID: 114531196048062696, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: DisableOnGenerated.Array.data[0]
+      value: 
+      objectReference: {fileID: 1818505023}
+    - target: {fileID: 114825741974884834, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: SoundClips.values.Array.data[2].name
+      value: pixeldeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 114825741974884834, guid: f13f57c5bc78bb34f9745aa7f74b5106,
+        type: 2}
+      propertyPath: SoundClips.values.Array.data[2].value
+      value: 
+      objectReference: {fileID: 8300000, guid: af84371dcb10a814da92dd62ea110866, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
   m_IsPrefabParent: 0
@@ -640,6 +660,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e0319a2d7c757e4fa6b1f033deb7c59, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1818505023 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1128243170244268, guid: 45a570ffd5e7bdc479b5ed462d6cd0ab,
+    type: 2}
+  m_PrefabInternal: {fileID: 1171998886}
 --- !u!114 &1926609381 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114085125914074366, guid: 24c9758f20d26614fb497fe01d95c7b3,

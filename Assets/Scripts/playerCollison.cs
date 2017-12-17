@@ -153,6 +153,7 @@ public class playerCollison : MonoBehaviour
             duration = 0.7f
         };
         TransitionKit.instance.transitionWithDelegate(pixelater);
+        Hub.Get<AudioManager>().PlaySound("pixeldeath");
 
         Hub.Get<GameManager>().switchColor();
         yield return new WaitForSeconds(WaitBetweenPixelateAndTP);

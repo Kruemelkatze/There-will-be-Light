@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
         {
             if (Hub.Get<GameManager>().GameStarted)
             {
-                Application.LoadLevel(Application.loadedLevel);
+                StartCoroutine(BackToSeedMenu());
             }
 
             //if (!Hub.Get<GameManager>().GamePaused)
@@ -49,6 +49,20 @@ public class UIManager : MonoBehaviour
             //    SeedScreen.SetActive(true);
             //}
         }
+    }
+
+    private IEnumerator BackToSeedMenu()
+    {
+        var pixelater = new PixelateTransition()
+        {
+            nextScene = -1,
+            duration = 0.7f
+        };
+        TransitionKit.instance.transitionWithDelegate(pixelater);
+        Hub.Get<AudioManager>().PlaySound("pixeldeath");
+
+        yield return new WaitForSeconds(0.7f);
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     public void OnSeedEditEnd()
@@ -96,6 +110,7 @@ public class UIManager : MonoBehaviour
             duration = 0.7f
         };
         TransitionKit.instance.transitionWithDelegate(pixelater);
+        Hub.Get<AudioManager>().PlaySound("pixeldeath");
 
         yield return new WaitForSeconds(0.7f);
         HUD.SetActive(true);
@@ -105,6 +120,8 @@ public class UIManager : MonoBehaviour
 
     public void Typed()
     {
-        Hub.Get<AudioManager>().PlaySound("key" + Random.Range(1, 3));
+        var i = Random.Range(1, 3);
+        Debug.Log(i);
+        Hub.Get<AudioManager>().PlaySound("key" + i);
     }
 }
