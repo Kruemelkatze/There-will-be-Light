@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     // Awake is always called before any Start functions
     void Awake()
     {
+        Cursor.visible = false;
         // Check if instance already exists
         if (Instance == null)
         {
