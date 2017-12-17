@@ -612,6 +612,10 @@ Prefab:
       propertyPath: hudHighscore
       value: 
       objectReference: {fileID: 374368489}
+    - target: {fileID: 4472790260828778, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f13f57c5bc78bb34f9745aa7f74b5106, type: 2}
   m_IsPrefabParent: 0
