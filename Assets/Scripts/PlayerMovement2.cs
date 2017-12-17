@@ -68,6 +68,12 @@ public class PlayerMovement2 : MonoBehaviour
 
         rigidbody2D.velocity = new Vector2(horizontalSpeed, verticalSpeed);
 
+        //Rotate player to movement
+        float rot_z = Mathf.Atan2(verticalSpeed, horizontalSpeed) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z + 90);
+
+        //transform.rotation = Quaternion.LookRotation(rigidbody2D.velocity);
+
         if (EnablePitchChange && !_pC.CollisionDisabled)
         {
             float pitchChangePercent = (-verticalSpeed - vSpeedDefault) / vDownSpeedMax;
