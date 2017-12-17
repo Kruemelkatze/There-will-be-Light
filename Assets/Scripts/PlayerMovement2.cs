@@ -26,6 +26,14 @@ public class PlayerMovement2 : MonoBehaviour
 
     public bool Enabled = true;
 
+    public float CurrentVerticalSpeed
+    {
+        get
+        {
+            return rigidbody2D.velocity.y;
+        }
+    }
+
 
     // Use this for initialization
     void Start()
