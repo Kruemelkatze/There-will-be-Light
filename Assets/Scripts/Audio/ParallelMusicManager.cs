@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ParallelMusicManager : MonoBehaviour
 {
@@ -86,7 +83,7 @@ public class ParallelMusicManager : MonoBehaviour
         {
             var source = AudioSources[i];
             bool playedBefore = source.volume > LowerVolumeLimit;
-            bool playNow = ArrayUtility.Contains(tracks, i);
+            bool playNow = Contains(tracks, i);
 
             if (!playedBefore && playNow)
             {
@@ -97,5 +94,15 @@ public class ParallelMusicManager : MonoBehaviour
                 source.FadeTo(0, FadeSpeed, null);
             }
         }
+    }
+
+    private bool Contains(int[] arr, int val)
+    {
+        foreach(int i in arr)
+        {
+            if (i == val)
+                return true;
+        }
+        return false;
     }
 }
